@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      lang="es">
+<head>
+<head th:insert="layout::header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <nav th:insert="layout::nav"></nav>
+    <div class="container mt-5">
+        <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h2 class="card-title" th:text="${alumno.nombre} + ' ' + ${alumno.paterno}"></h2>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Detalle:</h6>
+                <p class="card-text">
+                    <strong>Matricula: </strong><span th:text="${alumno.matricula}"></span><br>
+                    <strong>Fecha nacimiento: </strong><span th:text="${alumno.fnac}"></span><br>
+                    <strong>Estatura: </strong><span th:text="${alumno.estatura}"></span><br>
+                    <strong>Estado: </strong><span th:text="${alumno.estado}"></span><br>
+                </p>
+                <a href="/front/alumnos/" class="btn btn-primary">Ir a todos</a>
+            </div>
+        </div>
+    </div>
+    <div th:insert="layout::footer"></div>
+
+</body>
+</html>
